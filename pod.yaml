@@ -15,7 +15,7 @@ spec:
         app: d9
     spec:
       containers:
-      - image: sesibhushansrijan/sesi23:latest
+      - image: sesibhushansrijan/sesi24:latest
         name: drupal
         ports:
         - containerPort: 80
