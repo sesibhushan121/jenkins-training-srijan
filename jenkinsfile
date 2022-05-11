@@ -1,0 +1,26 @@
+properties([pipelineTriggers([githubPush()])])
+
+pipeline { 
+    agent any
+   
+    stages {
+         stage('Build Docker image') { 
+             steps {
+                    sh """
+                     docker build -t sesi24 .
+                     docker image tag sesi24 sesibhushansrijan/sesi24:latest
+                    """
+                 
+                
+            }
+        }
+       stage('Pushing images to Docker'){
+            steps {
+                container('docker') {
+                        sh 'docker login -u sesibhushansrijan -p Sesi2020.'
+                        sh 'docker push sesibhushansrijan/sesi24:latest'
+                }
+            }
+        }
+}        
+        
