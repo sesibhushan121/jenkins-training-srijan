@@ -16,4 +16,4 @@ RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/down
 	chmod +x drush.phar && \
 	mv drush.phar /usr/local/bin/drush
 
-RUN rm -rf /var/www/html/*
+
